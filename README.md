@@ -7,6 +7,9 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Prerequisites</h2>
 
+- [Creating Virtual Machines in the Cloud](https://github.com/joshuaheck1/VM-creation)
+  (Reference this project for help creating Virtual Manchines if needed.)
+  
 - [Create Active Directory Infrastructure in Azure](https://github.com/joshuaheck1/create-ad-infrastructure)
 
 <h2>Environments and Technologies Used</h2>
@@ -24,13 +27,14 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Step 1: Install Active Directory
+- Step 2: Create a Domain Admin User within the Domain
+- Step 3: Join Client-1 the Domain
+- Step 4: Setup Remote Desktop for non-admin users on Client-1
 
 <h2>Deployment and Configuration Steps</h2>
 
+<h3>Step 1: Install Active Directory</h3>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
