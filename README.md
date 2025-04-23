@@ -290,6 +290,47 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <p>- Click Yes on the pop-up. You can Refresh mydomain.com to move _CLIENTS to the top with _ADMINS & _EMPLOYEES if you want.</p>
 <br />
 
+<h3>Step 4: Setup Remote Desktop for non-admin users on Client-1</h3>
+
+<p>
+<img width="500" height="400" alt="Screenshot 2025-04-23 at 11 21 16 AM" src="https://github.com/user-attachments/assets/147451a6-923c-4f87-b233-f63051053e16" />
+</p>
+<p>- Login into Client-1 with the jane_admin account.</p>
+<br />
+
+<table>
+  <tr>
+    <td>
+      <img width="1000" alt="RD1" src="https://github.com/user-attachments/assets/4c7f51ab-4d66-42fd-a001-23bbf927603a" />
+    </td>
+    <td>
+      <img width="1000" alt="RD2" src="https://github.com/user-attachments/assets/9b9e27b9-11d0-4721-8709-a6a4dffb6a28" />
+    </td>
+  </tr>
+</table>
+<p>- Right-click Start Menu -> select System -> click Remote Desktop. </p>
+<p>- In Remote Desktop Users, click Add. </p>
+<br />
+
+<table>
+  <tr>
+    <td>
+      <img width="1000" alt="RD3" src="https://github.com/user-attachments/assets/f6115248-d541-4fe0-8d65-9dacfaf79815" />
+    </td>
+    <td>
+      <img width="1000" alt="RD4" src="https://github.com/user-attachments/assets/ac7c5331-de75-4065-8c37-8e8d62cd4ac0" />
+    </td>
+  </tr>
+</table>
+<p>- Type in domain users and click Check Names. Domain Users will capitalize and be underlined. Click OK. </p>
+<p>- Confirm that MYDOMAIN\Domain Users is showing under Remote Desktop Users and click OK. </p>
+<p>- Now, all users in the Domain Users group can Remote Desktop into Client-1. </p>
+<br />
+
+
+
+
+
 
 
 
