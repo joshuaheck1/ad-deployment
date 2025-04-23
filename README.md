@@ -97,7 +97,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
   </tr>
 </table>
 <p>
- - Under "Select the deployment opertion", select Add a new forest and name it mydomain.com -> click Next.
+ - Under "Select the deployment operation", select Add a new forest and name it mydomain.com -> click Next.
 <p> - For the DSRM password, just use Password1. We will not use this at all. Click Next.</p>
 <br />
 
@@ -114,16 +114,19 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <p>
  - Uncheck the DNS delegation options and click Next. Keep clicking Next for the next couple on options until you see Figure 10.
 <p> - Now that all the options have been configured, click Install to begin installation.</p>
-<p>- Once the install is finished, DC-1 will reboot.</p>
+<p>- Once the install is finished, DC-1 will reboot. This might take a couple minutes because DC-1 is now on the domain.</p>
 <br />
 
 <p>
 <img width="800" alt="Screenshot 2025-04-23 at 1 12 32 AM" src="https://github.com/user-attachments/assets/77357c2e-c68f-4366-af58-6acca7881af0" />
 </p>
 <p>
- - Now, Remote Desktop back into DC-1. Be sure to specify the domain in the username because DC-1 is a Domain Controller now. Enter "mydomain.com\jheck1" (mydomain.com\username)
-<p> - This will log us in as a specific user with the domain.</p>
+ - Remote Desktop back into DC-1. Since DC-1 is now a domain controller and on the domain, you have to specify which domain, and that you want to log on as a domain user.</p>  
+<p>- Enter "mydomain.com\jheck1" (mydomain.com\username)</p>
+<p>- This will log us in as a specific user within the domain.</p>
 <br />
+
+<h3>Step 2: Create a Domain Admin User within the Domain</h3>
 
 <table>
   <tr>
@@ -155,7 +158,106 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <p>- Right-click mydomain.com -> New -> Organizational Unit. Name this OU as _ADMINS (don't forget the underscore). Click OK.</p>
 <br />
 
+<p>
+<img width="800" alt="DAD17" src="https://github.com/user-attachments/assets/9cf665b5-72a9-4e36-a53a-bb5049b07ce3" />
+</p>
+<p>
+ - Now, right-click mydomain.com and select Refresh. This will move our new OUs to the top of the list for easier location and access.</p>  
+<br />
 
+<p>
+<img width="800" alt="DAD18" src="https://github.com/user-attachments/assets/86ae7e0f-d9e2-4a81-8bba-ec6066f5d7b0" />
+</p>
+<p>- Next, we will create a new user.</p> 
+ <p>- Right-click _ADMINS -> select New -> click User.</p>
+<br />
+
+<table>
+  <tr>
+    <td>
+      <img width="1000" alt="DAD19" src="https://github.com/user-attachments/assets/4848b413-6391-40f2-bdb4-d9d79531988b" />
+    </td>
+    <td>
+      <img width="1000" alt="DAD20" src="https://github.com/user-attachments/assets/1fbf670b-c6bb-4683-b57e-e3ad8e4e6155" />
+    </td>
+  </tr>
+</table>
+<p>- Name the new user "Jane Doe" with the username "jane_admin" and click Next.</p>
+<p>- Use the same password as DC-1 to keep it simple. Uncheck "User must change password at next login" and check "Password never expires". (We wouldn't do this in the real world for security purposes, but its ok for this project 😉).</p>
+<br />
+
+<p>
+<img width="500" height="400" alt="DAD21" src="https://github.com/user-attachments/assets/a972929d-c10a-4b24-b6d8-d9261fba05bc" />
+</p>
+<p>- Confirm the new user's information and click Finish.</p> 
+<br />
+
+<p>
+<img width="800" alt="DAD23" src="https://github.com/user-attachments/assets/a8c61736-e95a-4adf-97f3-2f5cf010920c" />
+</p>
+<p>- Now, we will make "Jane Doe" a Domain Admin by adding this account to the built-in "Domain Admins" Security Group. </p> 
+<p>- Open the _ADMINS folder -> right-click Jane Doe -> select Properties.</p>
+<br />
+
+<table>
+  <tr>
+    <td>
+      <img width="1000" alt="DAD24" src="https://github.com/user-attachments/assets/e57fd05a-6735-448f-b1a9-87ac0b7768a5" />
+    </td>
+    <td>
+      <img width="1000" alt="DAD25" src="https://github.com/user-attachments/assets/229ab0d9-183a-4267-9868-a0ba8d777a03" />
+    </td>
+  </tr>
+</table>
+<p>- Select "Member of" and click "Add".</p>
+<p>- Type in "domain admins" and click "Check Names".</p>
+<p>- Notice that after clicking "Check Names", "Domain Admins" is now capitalized and underlined. Click OK. (See figure 23)</p>
+<br />
+
+<p>
+<img width="460" height="450" alt="DAD26" src="https://github.com/user-attachments/assets/9059c515-51f3-4185-b626-cb3b2f368e06" />
+</p>
+<p>- We can confirm that Jane Doe is now a Domain Admin. The Force is strong with this one!🧘🏽‍♀️ (Click OK).</p>
+<p>- Next, we will log out and close the DC-1 connection. Then, we will log back into DC-1 with Jane Doe's Admin login and we'll use this account from now on. (Note Jane Doe's login info)</p>
+<br />
+
+<h3>Step 3: Join Client-1 to the Domain</h3>
+
+<p>
+<img width="800" alt="DAD28" src="https://github.com/user-attachments/assets/6f9d0f46-f77e-4a4e-957d-20031cd8eaaa" />
+</p>
+<p>- Now, we will login to Client-1 as the original local admin. (jheck1) </p>
+<p>- Right-click Start Menu -> select System </p>
+<p>- Take a second and look over Figure 25. There is alot going on here and the windows pop-up in a weird order. </p>
+<p>- 1. Select "Rename this PC (advanced)". If you don't see this option at first, maximze the window or expand it to the right a little.</p>
+<p>- 2. In the "Computer Name" tab, click "Change".</p>
+<p>- 3. Under "Member of" select "Domain" and type in mydomain.com. </p>
+<p>- 4. Click OK.</p>
+<br />
+
+
+<p>
+<img width="800" alt="DAD29" src="https://github.com/user-attachments/assets/2bea523f-637c-4d03-9bfd-58d63b6f712d" />
+
+</p>
+<p>- To join the domain, we will use the jane_admin account. </p>
+<p>- Enter in mydomain.com\jane_admin and password. click OK. </p>
+<br />
+
+<table>
+  <tr>
+    <td>
+      <img width="1000" alt="DAD30" src="https://github.com/user-attachments/assets/b3fdd933-ddad-4be7-8dd5-de8ae77682ee" />
+    </td>
+    <td>
+      <img width="1000" alt="DAD31" src="https://github.com/user-attachments/assets/b2f1a5ce-f789-46e6-8c98-e69f62383f15" />
+    </td>
+  </tr>
+</table>
+<p>- Once you clicked OK, the pop-up happened behind the System screen. Close that and you will see it as in Figure 27.</p>
+<p>- Click OK.</p>
+<p>- Client-1 will need to restart. Click Restart Now.</p>
+<br />
 
 
 
