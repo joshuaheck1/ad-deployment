@@ -271,7 +271,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </table>
 <p>- We will go to DC-1 now. If you just closed the connection earlier, simply log back in using the jane_admin account. (mydomain.com\jane_admin) </p>
 <p>- From the Start Menu -> Active Directory Users and Computers (ADUS). </p>
-<p>- Expand mydomain.com -> select Computers. We can verify Client-1 is here. Figure 29</p>
+<p>- Expand mydomain.com -> select Computers. We can verify Client-1 is here and successfully joined the domain. Figure 29</p>
 <p>- Now, we will create a new OU named _CLIENTS</p>
 <p>- Right-click mydomain.com -> select New -> click Organizational Unit</p>
 <br />
