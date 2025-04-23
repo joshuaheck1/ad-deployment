@@ -3,7 +3,7 @@
  alt="Microsoft Active Directory Logo"/>
 </p>
 
-<h1>Deploying and Configuring Active Directory in the Cloud (Azure)</h1>
+<h1>Deploy and Configure Active Directory in the Cloud (Azure)</h1>
 This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
 
 <h2>Prerequisites</h2>
