@@ -259,9 +259,36 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <p>- Client-1 will need to restart. Click Restart Now.</p>
 <br />
 
+<table>
+  <tr>
+    <td>
+      <img width="1000" alt="DAD33" src="https://github.com/user-attachments/assets/101b154b-33f6-4f94-a8ea-193d61e045a7" />
+    </td>
+    <td>
+      <img width="1000" alt="DAD34" src="https://github.com/user-attachments/assets/c26e0870-57d4-488b-a383-c9e47ec09d3d" />
+    </td>
+  </tr>
+</table>
+<p>- We will go to DC-1 now. If you just closed the connection earlier, simply log back in using the jane_admin account. (mydomain.com\jane_admin) </p>
+<p>- From the Start Menu -> Active Directory Users and Computers (ADUS). </p>
+<p>- Expand mydomain.com -> select Computers. We can verify Client-1 is here. Figure 29</p>
+<p>- Now, we will create a new OU named _CLIENTS</p>
+<p>- Right-click mydomain.com -> select New -> click Organizational Unit</p>
+<br />
 
-
-
+<table>
+  <tr>
+    <td>
+      <img width="1000" alt="DAD36" src="https://github.com/user-attachments/assets/4cd8b573-cfee-42e6-8df2-59d4a8242d24" />
+    </td>
+    <td>
+      <img width="1000" alt="DAD37" src="https://github.com/user-attachments/assets/774bf3c8-40aa-4b6b-a3c5-8ef40cbac197" />
+    </td>
+  </tr>
+</table>
+<p>- Go back to Computers and drag Client-1 to the new _CLIENTS OU. </p>
+<p>- Click Yes on the pop-up. You can Refresh mydomain.com to move _CLIENTS to the top with _ADMINS & _EMPLOYEES if you want.</p>
+<br />
 
 
 
