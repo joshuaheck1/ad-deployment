@@ -327,8 +327,12 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <p>- Now, all users in the Domain Users group can Remote Desktop into Client-1. </p>
 <br />
 
+<h2>Summary</h2>
 
-
+<p>
+This concludes our project. We did it! AD has been successfully deployed. We will add a bunch of users next. As always, Thank You for your time and viewing this Project. We'll see you on the next one! 😎      
+</p>
+<br />
 
 
 
