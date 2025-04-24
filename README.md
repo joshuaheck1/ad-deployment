@@ -330,7 +330,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Summary</h2>
 
 <p>
-This concludes our project. We did it! AD has been successfully deployed. We will add a bunch of users next. As always, Thank You for your time and viewing this Project. We'll see you on the next one! 😎      
+This concludes our project. We did it! AD has been successfully deployed. We will add a bunch of users next. Don't forget to Stop (turn off) the VMs in Azure. As always, Thank You for your time and viewing this Project. We'll see you on the next one! 😎      
 </p>
 <br />
 
